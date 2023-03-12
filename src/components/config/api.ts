@@ -1,8 +1,8 @@
 import { RouteLocation } from './types'
 
 export const AIRTABLE_API_KEY = process.env.REACT_APP_AIRTABLE_API_KEY as string
-export const AIRTABLE_BASE = 'applPEl3BsnpuszQu'
-export const AIRTABLE_CENSUS_BASE = 'appjb6Qnp4lTNz7Gn'
+export const AIRTABLE_BASE = 'appRFybjjMghyz5K3'
+export const AIRTABLE_CENSUS_BASE = 'appftD9UeMn9v5i8f'
 
 // TODO: get this into provider/global so it doesn't need adding every time
 export const reactQueryDefaults = {

@@ -5,13 +5,13 @@ import { nonCensusPolygonConfig } from './config.non-census-poly'
 export * from './config.points'
 
 export const MAPBOX_TOKEN = process.env.REACT_APP_MB_TOKEN
-export const NYC_LAT_LONG = { latitude: 40.7128, longitude: -74.006 }
+export const NYC_LAT_LONG = { latitude: 52.5244, longitude: 13.4105 }
 export const initialMapState = { ...NYC_LAT_LONG, zoom: 8.5 }
 export const POINT_ZOOM_LEVEL = 13 // clicked point or single-result filter
 export const mbStyleTileConfig = {
-  layerId: 'mb-data', // TODO: a dev/deploy-only instance!
+  layerId: 'data-for-map3', // TODO: a dev/deploy-only instance!
   langSrcID: 'languages-src', // arbitrary, set in code, never changes
-  tilesetId: 'elalliance.ckja99koi2iq623pep38azez5-1ea9g',
+  tilesetId: 'langmapberlin.cldbohp940q9m20pqsjosubyw-2stso',
   // Custom MB Style: the only known way to use the custom fonts
   customStyles: {
     dark: 'mapbox://styles/elalliance/ckdqj968x01ot19lf5yg472f2',
@@ -39,6 +39,6 @@ export const mapProps: InitialMapProps = {
 // This is for #3 above. It should include the 5 boroughs and bits of NJ, and
 // centered on Manhattan. // TODO: improve this now that no more offsets
 export const initialBounds = [
-  [-74.05, 40.598],
-  [-73.767185, 40.862],
+  [13.25, 52.35], // 52.5244 Longitude: 13.4105
+  [13.55, 52.65],
 ] as BoundsArray

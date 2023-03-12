@@ -13,9 +13,9 @@ export const nonCensusPolygonConfig = {
     selLineColor: 'rgb(255, 165, 0)',
     selFillColor: 'rgb(255, 165, 0)',
     sourceID: 'neighborhoods',
-    sourceLayer: 'neighborhoods',
+    sourceLayer: 'lor_ortsteile-alg2ty',
     tableName: 'Neighborhood',
-    url: 'mapbox://elalliance.ckmundquc1k5328ppob5a9wok-1kglp',
+    url: 'mapbox://langmapberlin.5oo280v6',
     visContextKey: 'showNeighbs',
     uniqueIDfield: 'name',
     fillPaint: {

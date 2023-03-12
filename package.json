@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.11.0",
     "@testing-library/react": "^10.4.5",
     "@testing-library/user-event": "^7.1.2",
+    "@types/eslint-scope": "^3.7.4",
     "@types/geojson": "^7946.0.7",
     "@types/jest": "^24.0.0",
     "@types/match-sorter": "^4.0.0",
