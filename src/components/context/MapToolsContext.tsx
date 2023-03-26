@@ -9,7 +9,7 @@ const initialState = {
   autoZoomCensus: true,
   geolocActive: false,
   geocodeMarkerText: null,
-  showNeighbs: false,
+  showNeighbs: true,
   showCounties: false,
   // baseLayer: isLocalDev ? 'none' : 'light', // TODO: default to none in dev
   baseLayer: 'light',

@@ -32,9 +32,9 @@ export const nonCensusPolygonConfig = {
     selLineColor: 'hsl(193, 73%, 52%)',
     selFillColor: 'hsla(193, 63%, 42%, 0.85)',
     sourceID: 'counties',
-    sourceLayer: 'counties',
+    sourceLayer: 'bezirksgrenzen-dzaqvc',
     tableName: 'County',
-    url: 'mapbox://elalliance.ckmyz29pm0zzq22nax87m0kxb-7j7uy',
+    url: 'mapbox://langmapberlin.3or72b7t',
     visContextKey: 'showCounties',
     uniqueIDfield: 'name',
     fillPaint: {

@@ -29,7 +29,7 @@ export const PolygonLayer: FC<PolygonLayerProps> = (props) => {
       type="vector"
       // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore // promoteId is just not anywhere in the source...
-      promoteId="name"
+      promoteId="OTEIL"
     >
       <Layer
         // TODO: rm if layer order is never important

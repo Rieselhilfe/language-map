@@ -12,8 +12,8 @@ import {
   CensusTableRow,
   MapPopupProps,
   MapPopupsProps,
-  NeighborhoodTableSchema,
-  PolygonPopupProps,
+  // NeighborhoodTableSchema,
+  // PolygonPopupProps,
 } from './types'
 import { getCenterOfBounds } from './utils'
 
@@ -100,7 +100,7 @@ const LanguagePopup: FC<Pick<MapPopupsProps, 'handleClose'>> = (props) => {
   )
 }
 
-const PolygonPopup: FC<PolygonPopupProps> = (props) => {
+/** const PolygonPopup: FC<PolygonPopupProps> = (props) => {
   const { handleClose, tableName, addlFields = [] } = props
   const { id } = useParams<{ id: string }>()
 
@@ -127,7 +127,7 @@ const PolygonPopup: FC<PolygonPopupProps> = (props) => {
       content={firstResult.County || ''}
     />
   )
-}
+} */
 
 const CensusPopup: FC<MapPopupsProps> = (props) => {
   const { handleClose } = props
@@ -193,23 +193,28 @@ export const MapPopups: FC<MapPopupsProps> = (props) => {
       <Route path="/Explore/Language/:language/:id" exact>
         <LanguagePopup handleClose={handleClose} />
       </Route>
-      <Route path="/Explore/Neighborhood/:id" exact>
-        <PolygonPopup
-          handleClose={handleClose}
-          tableName="Neighborhood"
-          addlFields={['County', 'name']}
-        />
-      </Route>
-      <Route path="/Explore/County/:id" exact>
-        <PolygonPopup
-          handleClose={handleClose}
-          tableName="County"
-          addlFields={['name']}
-        />
-      </Route>
+
       <Route path={routes.censusDetail} exact>
         <CensusPopup handleClose={handleClose} />
       </Route>
     </Switch>
   )
 }
+
+/**
+ * <Route path="/Explore/Neighborhood/:id" exact>
+        <PolygonPopup
+          handleClose={handleClose}
+          tableName="Neighborhood"
+          addlFields={['County', 'name']}
+        />
+      </Route>
+ <Route path="/Explore/County/:id" exact>
+        <PolygonPopup
+          handleClose={handleClose}
+          tableName="County"
+          addlFields={['name']}
+        />
+      </Route>
+
+      */
