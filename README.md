@@ -1,18 +1,18 @@
 <p align="center">
-  <a href="https://languagemap.nyc/" target="_blank" title="Project website">
+  <a href="berlin-spricht.org" target="_blank" title="Project website">
     <img alt="logo" src="src/img/logo.svg" width="320" />
   </a>
 </p>
 
-# Languages of New York City Map
+# Languages of Berlin Map
 
 [![Netlify
 Status](https://api.netlify.com/api/v1/badges/1f8bbbc8-4747-415e-bc63-b392256cedd5/deploy-status)](https://app.netlify.com/sites/languagemapping/deploys)
 
 ## Background
 
-> This project will become an interactive map of New York City’s linguistic
-> diversity, using data collected by the Endangered Language Alliance (ELA).
+> This project will become an interactive map of Berlin’s linguistic
+> diversity, using data collected by Humboldt-Universität zu Berlin.
 > Users will need to be able to query a rich dataset and interact with the data
 > through an interactive map that may consist of audio, video, and storymap
 > links. The long-term vision for this project is to create an open source

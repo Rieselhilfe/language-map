@@ -107,11 +107,11 @@ export const usePageTitle = (): void => {
     const pageTitleViaPath: string =
       asArray[4] || asArray[3] || asArray[2] || asArray[1]
 
-    if (noFeatSelMatch) document.title = 'No site selected - NYC Languages'
+    if (noFeatSelMatch) document.title = 'No site selected - Berlin Languages'
     else if (censusDetailMatch)
-      document.title = `Census (${censusDetailMatch.params.table}) - NYC Languages`
+      document.title = `Census (${censusDetailMatch.params.table}) - Berlin Languages`
     // Default Home title // TODO: set this for reuse somewhere if needed
-    else if (!pageTitleViaPath) document.title = 'Languages of New York City'
+    else if (!pageTitleViaPath) document.title = 'Languages of Berlin'
     // Everything else gets the first available path segment, except for detail
     // view via Details or Table.
     else if (!detailsMatch?.params.id) {
