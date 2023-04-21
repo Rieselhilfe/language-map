@@ -172,7 +172,7 @@ export const exportPdf = (
     // Footer: replace the expression used the per-page loop of jspdf-autotable
     // NOTE: total page number plugin only available in jspdf v1.0+
     doc.putTotalPages(totalPagesExp)
-    doc.setProperties({ title: 'Languages of NYC' })
+    doc.setProperties({ title: 'Languages of Berlin' })
 
     if (iOS()) doc.save('nyc-languages.pdf')
     else {
