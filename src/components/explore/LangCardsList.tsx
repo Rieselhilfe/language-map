@@ -32,7 +32,7 @@ export const LangCardsList: FC<{ field?: string }> = (props) => {
 
   if (error) return <>{error?.message}</>
   if (isLoading) return null
-  if (!isLoading && !data.length) return <>No match found.</>
+  if (!isLoading && !data.length) return <></>
 
   const thisLangConfig = data[0] || {}
 

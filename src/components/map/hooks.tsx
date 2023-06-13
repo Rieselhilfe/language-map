@@ -136,7 +136,7 @@ export const useCensusSymb: Types.UseCensusSymb = (
   // DUUUDE useRouteMatch
   const pathDeservesFetch =
     pathname.includes(routes.local) ||
-    pathname.includes('/Explore/Language/') || // TODO: super-confirm it works
+    pathname.includes('/karte/Explore/Language/') || // TODO: super-confirm it works
     pathname.includes(routes.explore)
 
   const { data, error, isLoading } = useAirtable<Types.CensusTableRow>(
@@ -223,12 +223,15 @@ export const useZoomToBounds: Types.UseZoomToBounds = (
 // TODO: make it not insanely fragile, or abandon hover stuff on polygons
 export const useFeatSrcFromMatch: Types.UseRenameLaterUgh = () => {
   const neighbsMatch = useRouteMatch<{ id: string }>({
-    path: ['/Explore/Neighborhood/:id', '/Explore/Neighborhood/:id/:something'],
+    path: [
+      '/karte/Explore/Neighborhood/:id',
+      '/karte/Explore/Neighborhood/:id/:something',
+    ],
     exact: true,
   })
 
   const countiesMatch = useRouteMatch<{ id: string }>({
-    path: ['/Explore/County/:id', '/Explore/County/:id/:something'],
+    path: ['/karte/Explore/County/:id', '/karte/Explore/County/:id/:something'],
     exact: true,
   })
 

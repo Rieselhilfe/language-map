@@ -18,6 +18,23 @@ import {
 
 import { Statuses } from 'components/context/types'
 
+import {
+  UI_ADDL_NEIGHBORHOODS,
+  UI_AUDIO,
+  UI_COUNTY,
+  UI_DOWNLOAD_AS_CSV,
+  UI_DOWNLOAD_AS_PDF,
+  UI_GLOBAL_SPEAKERS,
+  UI_LANGUAGE,
+  UI_LANGUAGE_FAMILY,
+  UI_LOCATION,
+  UI_NO_COMMUNITIES_FOUND,
+  UI_SEARCH,
+  UI_SIZE,
+  UI_STATUS,
+  UI_VIDEO,
+  UI_WORLD_REGION,
+} from 'components/config'
 import * as Types from './types'
 import * as utils from './utils'
 import * as Cells from './Cells'
@@ -37,7 +54,7 @@ const COMM_STATUS_LOOKUP = {
 
 // TODO: pass this as fn arg instead of importing in export util
 export const tableExportMeta = {
-  pageTitle: 'Languages of New York City',
+  pageTitle: 'Languages of Berlin',
   filename: 'nyc-language-data',
   fullDatasetURL: 'https://airtable.com/shrqQo5FJHvhKtffs',
 }
@@ -61,8 +78,7 @@ const COMM_SIZES = {
 
 export const localization: Localization = {
   body: {
-    emptyDataSourceMessage:
-      'No communities found. Try fewer criteria or click the "Clear filters" button to reset the table.',
+    emptyDataSourceMessage: UI_NO_COMMUNITIES_FOUND,
   },
   header: {
     actions: '',
@@ -70,9 +86,9 @@ export const localization: Localization = {
   toolbar: {
     // eslint-disable-next-line @typescript-eslint/ban-ts-comment
     // @ts-ignore // in newer version of material-table, which has laggy bug...
-    exportCSVName: 'Download as CSV',
-    exportPDFName: 'Download as PDF',
-    searchPlaceholder: 'Search...',
+    exportCSVName: UI_DOWNLOAD_AS_CSV,
+    exportPDFName: UI_DOWNLOAD_AS_PDF,
+    searchPlaceholder: UI_SEARCH,
   },
 }
 
@@ -143,7 +159,7 @@ const hiddenCols = [
     hidden: true,
   },
   {
-    title: 'Additional Neighborhoods',
+    title: UI_ADDL_NEIGHBORHOODS,
     field: 'Additional Neighborhoods',
     ...commonColProps,
     hidden: true,
@@ -196,7 +212,7 @@ export const columns = [
   {
     // It's not actully county, just a sneaky way to allow county/borough search
     // AND a "view details modal" icon. Two birds, one stone.
-    title: 'County',
+    title: UI_COUNTY,
     field: 'County',
     ...commonColProps,
     sorting: false,
@@ -209,7 +225,7 @@ export const columns = [
   },
   {
     // Average: 9.3, Longest: 31
-    title: 'Language',
+    title: UI_LANGUAGE,
     field: 'Language',
     ...commonColProps,
     defaultSort: 'asc',
@@ -226,7 +242,7 @@ export const columns = [
   },
   {
     // Average: 13, Longest: 25 (thanks AUS & NZ...)
-    title: 'World Region',
+    title: UI_WORLD_REGION,
     field: 'World Region',
     ...commonColProps,
     // TODO: instead of open-search filters, custom `filterComponent` with this:
@@ -237,22 +253,22 @@ export const columns = [
       whiteSpace: 'nowrap',
     },
   },
-  {
-    // Average: 8.5, Longest: 35 (w/o big Congos: Average: 8, Longest: 24)
-    // ...plus emoji flag and margin
-    // TODO: for Country selection:
-    // https://material-ui.com/components/autocomplete/#country-select
-    title: 'Country',
-    field: 'Country',
-    ...commonColProps,
-    render: utils.renderCountryColumn,
-    headerStyle: {
-      paddingRight: 30, // enough for `South Africa` cells to not wrap
-    },
-  },
+  // {
+  //  // Average: 8.5, Longest: 35 (w/o big Congos: Average: 8, Longest: 24)
+  //  // ...plus emoji flag and margin
+  //  // TODO: for Country selection:
+  //  // https://material-ui.com/components/autocomplete/#country-select
+  //  title: 'Country',
+  //  field: 'Country',
+  //  ...commonColProps,
+  //  render: utils.renderCountryColumn,
+  //  headerStyle: {
+  //    paddingRight: 30, // enough for `South Africa` cells to not wrap
+  //  },
+  // },
   {
     // Longest: 20
-    title: 'Global Speakers', // the only abbrev so far
+    title: UI_GLOBAL_SPEAKERS, // the only abbrev so far
     field: 'Global Speaker Total',
     ...commonColProps,
     // customSort: utils.sortNeighbs, // TODO: blanks last
@@ -270,13 +286,13 @@ export const columns = [
   },
   {
     // Average: 10, Longest: 23 but preserve hyphenated Athabaskan-Eyak-Tlingit
-    title: 'Language Family',
+    title: UI_LANGUAGE_FAMILY,
     field: 'Language Family',
     ...commonColProps,
     headerStyle: { whiteSpace: 'nowrap' },
   },
   {
-    title: 'Video',
+    title: UI_VIDEO,
     field: 'Video',
     ...commonColProps,
     export: false,
@@ -287,7 +303,7 @@ export const columns = [
     disableClick: true,
   },
   {
-    title: 'Audio',
+    title: UI_AUDIO,
     field: 'Audio',
     ...commonColProps,
     export: false,
@@ -299,13 +315,13 @@ export const columns = [
   },
   {
     // Average: 12, Longest: 26
-    title: <LocalColumnTitle text="Location" />,
+    title: <LocalColumnTitle text={UI_LOCATION} />,
     field: 'Primary Location',
     ...commonColProps,
   },
   {
     // Longest: 14
-    title: <LocalColumnTitle text="Size" />,
+    title: <LocalColumnTitle text={UI_SIZE} />,
     field: 'Size',
     ...commonColProps,
     align: 'left',
@@ -323,7 +339,7 @@ export const columns = [
     },
   },
   {
-    title: <LocalColumnTitle text="Status" />,
+    title: <LocalColumnTitle text={UI_STATUS} />,
     field: 'Status',
     ...commonColProps,
     searchable: false,

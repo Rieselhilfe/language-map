@@ -10,7 +10,7 @@ type ListItemLinkProps = {
 
 export const AboutLinkAsIcon: FC<ListItemLinkProps> = ({
   muiClass,
-  to = '/Info/About',
+  to = '/karte/Info/About',
 }) => {
   const history = useHistory()
 

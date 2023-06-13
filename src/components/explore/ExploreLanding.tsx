@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 
 import { BasicExploreIntro } from 'components/panels'
 import { LoadingIndicator } from 'components/generic/modals'
+import { UI_COULD_NOT_LOAD } from 'components/config'
 import { useAirtable } from './hooks'
 import { prepFormula, prepFields } from './utils'
 import { CardList } from './CardList'
@@ -35,7 +36,7 @@ export const ExploreLanding: FC<MidLevelExploreProps> = (props) => {
   if (error || landingError) {
     return (
       <>
-        Could not load {field}. {error?.message || landingError?.message}
+        {field} {UI_COULD_NOT_LOAD}. {error?.message || landingError?.message}
       </>
     )
   }

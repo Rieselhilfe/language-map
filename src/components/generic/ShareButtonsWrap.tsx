@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
+import { UI_SHARE_THIS } from 'components/config'
 
 type StyleProps = {
   showShareBtns?: boolean
@@ -34,7 +35,7 @@ export const ShareButtonsWrap: FC<ShareButtonsWrapProps> = (props) => {
   return (
     <div className={classes.root}>
       <Typography className={classes.shareBtnHeading}>
-        Share this {shareText}:
+        {UI_SHARE_THIS} {shareText}:
       </Typography>
       {children}
     </div>

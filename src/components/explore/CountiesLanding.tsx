@@ -3,6 +3,7 @@ import { useRouteMatch } from 'react-router-dom'
 
 import { BasicExploreIntro } from 'components/panels'
 import { LoadingIndicator } from 'components/generic/modals'
+import { UI_COULD_NOT_LOAD } from 'components/config'
 import { useAirtable } from './hooks'
 import { CardListWrap } from './CardList'
 import { CustomCard } from './CustomCard'
@@ -32,7 +33,8 @@ export const CountiesLanding: FC = (props) => {
   if (error || landingError) {
     return (
       <>
-        Could not load {tableName}. {error?.message || landingError?.message}
+        {tableName} {UI_COULD_NOT_LOAD}.{' '}
+        {error?.message || landingError?.message}
       </>
     )
   }

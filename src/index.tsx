@@ -30,7 +30,7 @@ WebFont.load({
   // Gentium is already loaded in the CSS but this seems to avoid FOUT
   custom: {
     families: ['Gentium'],
-    urls: ['/fonts/GentiumAlt.ttf'],
+    urls: ['/karte/fonts/GentiumAlt.ttf'],
   },
 })
 

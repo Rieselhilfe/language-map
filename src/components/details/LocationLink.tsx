@@ -52,7 +52,7 @@ export const LocationLink: FC<LocationLinkProps> = (props) => {
       <RouterLink
         className={classes.link}
         title={`View more languages spoken in ${primaryLoc}`}
-        to={`/Explore/${explorePath}/${primaryLoc}`}
+        to={`/karte/Explore/${explorePath}/${primaryLoc}`}
       >
         <BiMapPin />
         {linkText}

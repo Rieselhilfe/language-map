@@ -1,12 +1,19 @@
 import React, { FC } from 'react'
-import { Link as RouterLink } from 'react-router-dom'
+// import { Link as RouterLink } from 'react-router-dom'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
-import { Link, Button, Popover, Typography } from '@material-ui/core'
+import { Popover, Typography } from '@material-ui/core' // Link, Button,
 
 import { DialogCloseBtn } from 'components/generic/modals'
 import { useMapToolsState, useMapToolsDispatch } from 'components/context'
 import { ToggleWithHelper, useUItext } from 'components/generic'
-import { routes } from 'components/config/api'
+// import { routes } from 'components/config/api'
+import {
+  UI_CLOSE_MAP_MENU,
+  UI_MAP_OPTIONS,
+  UI_SHOW_COUNTIES,
+  UI_SHOW_NEIGHBORHOODS,
+  UI_ZOOM_TO_LOCATION,
+} from 'components/config'
 import { BaseLayerToggles } from './BaseLayerToggles'
 
 type MapOptionsMenuProps = {
@@ -60,11 +67,11 @@ export const MapOptionsMenu: FC<MapOptionsMenuProps> = (props) => {
     showCounties,
     showNeighbs,
     geolocActive,
-    censusActiveField,
+    //  censusActiveField,
   } = useMapToolsState()
   const mapToolsDispatch = useMapToolsDispatch()
   const { neighbsHelp, countiesHelp, geolocHelp } = useHelperText()
-  const activeField = censusActiveField?.id
+  // const activeField = censusActiveField?.id
 
   const open = Boolean(anchorEl)
   const id = open ? 'map-menu-popover' : undefined
@@ -97,54 +104,59 @@ export const MapOptionsMenu: FC<MapOptionsMenuProps> = (props) => {
         variant="h6"
         className={classes.popoverHeading}
       >
-        Map Options
+        {UI_MAP_OPTIONS}
       </Typography>
       <ToggleWithHelper
         checked={showNeighbs}
-        label="Show neighborhoods"
+        label={UI_SHOW_NEIGHBORHOODS}
         handleChange={toggleNeighbs}
         name="toggle-neighborhoods"
         helperText={neighbsHelp}
       />
       <ToggleWithHelper
         checked={showCounties}
-        label="Show counties"
+        label={UI_SHOW_COUNTIES}
         handleChange={toggleCounties}
         name="toggle-counties"
         helperText={countiesHelp}
       />
       <ToggleWithHelper
         checked={geolocActive}
-        label="Show and zoom to my location"
+        label={UI_ZOOM_TO_LOCATION}
         handleChange={toggleGeoLoc}
         name="toggle-geolocation"
         helperText={geolocHelp}
       />
-      <div className={classes.censusLinks}>
-        <span className={classes.censusLinkLabel}>Census data:</span>
-        <Button
-          component={RouterLink}
-          size="small"
-          className={classes.censusLink}
-          color="secondary"
-          to={routes.local}
-        >
-          View options
-        </Button>
-        <Link
-          component={Button}
-          size="small"
-          className={classes.censusLink}
-          color="secondary"
-          title="Clear census layer language"
-          disabled={activeField === undefined}
-          onClick={() => mapToolsDispatch({ type: 'CLEAR_CENSUS_FIELD' })}
-        >
-          Clear selection
-        </Link>
-      </div>
       <BaseLayerToggles />
-      <DialogCloseBtn tooltip="Close map menu" onClose={() => handleClose()} />
+      <DialogCloseBtn
+        tooltip={UI_CLOSE_MAP_MENU}
+        onClose={() => handleClose()}
+      />
     </Popover>
   )
 }
+
+// vor BaseLayerToggles am Ende:
+//      <div className={classes.censusLinks}>
+//        <span className={classes.censusLinkLabel}>Census data:</span>
+//        <Button
+//          component={RouterLink}
+//          size="small"
+//          className={classes.censusLink}
+//          color="secondary"
+//          to={routes.local}
+//        >
+//          {UI_VIEW_OPTIONS}
+//        </Button>
+//        <Link
+//          component={Button}
+//          size="small"
+//          className={classes.censusLink}
+//          color="secondary"
+//          title="Clear census layer language"
+//          disabled={activeField === undefined}
+//          onClick={() => mapToolsDispatch({ type: 'CLEAR_CENSUS_FIELD' })}
+//        >
+//          {UI_DE_SELECT}
+//        </Link>
+//      </div>

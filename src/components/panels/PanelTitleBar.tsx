@@ -101,7 +101,7 @@ export const PanelTitleBar: FC<PanelTitleBarProps> = (props) => {
   const classes = useStyles({})
   const { pathname } = useLocation()
   // Lil' gross, but use Level2 route name first, otherwise Level1
-  const panelTitle = pathname.split('/')[2] || pathname.split('/')[1]
+  const panelTitle = pathname.split('/')[3] || pathname.split('/')[1]
 
   // WISHLIST: add maximize btn on mobile
   return (
@@ -110,7 +110,7 @@ export const PanelTitleBar: FC<PanelTitleBarProps> = (props) => {
         <Switch>
           {/* Census can just have home btn */}
           <Route path={routes.local} />
-          <Route path={['/', '/:level1']} exact />
+          <Route path={['/karte/', '/karte/:level1']} exact />
           <Route>
             <SplitCrumbs />
           </Route>

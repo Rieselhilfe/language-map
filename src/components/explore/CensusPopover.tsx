@@ -95,7 +95,7 @@ export const CensusPopover: FC<CensusPopoverProps> = (props) => {
       transformOrigin={{ vertical: 'center', horizontal: 'center' }}
     >
       <Typography variant="h6" className={classes.popoverHeading}>
-        Census Language Data (NYC only)
+        Census Language Data
       </Typography>
       <Explanation className={classes.intro}>
         <UItextFromAirtable id="census-popout-intro" />
@@ -127,7 +127,7 @@ export const CensusPopover: FC<CensusPopoverProps> = (props) => {
       </div>
       <Typography
         component={RouterLink}
-        to="/Census"
+        to="/karte/Census"
         align="center"
         className={classes.viewAllLink}
       >

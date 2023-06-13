@@ -3,6 +3,7 @@ import { useQuery } from 'react-query'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 
 import { LoadingIndicator } from 'components/generic/modals'
+import { UI_AN_ERROR_HAS_OCCURRED } from 'components/config'
 import { AboutPageProps, WpApiPageResponse } from './types'
 import { createMarkup } from '../../utils'
 import { defaultQueryFn } from './utils'
@@ -49,7 +50,7 @@ export const AboutPageView: FC<AboutPageProps> = (props) => {
     <div className={classes.root}>
       {error && (
         <>
-          An error has occurred.{' '}
+          {UI_AN_ERROR_HAS_OCCURRED}{' '}
           <span role="img" aria-label="man shrugging emoji">
             🤷‍♂
           </span>

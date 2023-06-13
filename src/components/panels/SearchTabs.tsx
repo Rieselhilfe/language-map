@@ -14,6 +14,7 @@ import { SearchByOmnibox } from 'components/home/SearchByOmnibox'
 import { GeocoderPopout } from 'components/map'
 import { PopoverWithUItext } from 'components/generic'
 import { UItextTableID } from 'components/generic/types'
+import { UI_SEARCH_LANGUAGES, UI_SEARCH_LOCATIONS } from 'components/config'
 import { TabPanel } from './TabPanel'
 import { SearchTabsProps } from './types'
 
@@ -90,13 +91,13 @@ export const SearchTabs: FC<SearchTabsProps> = (props) => {
         <Tab
           className="search-tab"
           classes={{ selected: classes.selected, root: classes.tabRoot }}
-          label="Search languages"
+          label={UI_SEARCH_LANGUAGES}
           {...a11yProps(0)}
         />
         <Tab
           className="search-tab"
           classes={{ selected: classes.selected, root: classes.tabRoot }}
-          label="Search locations"
+          label={UI_SEARCH_LOCATIONS}
           {...a11yProps(1)}
         />
       </Tabs>

@@ -36,20 +36,20 @@ const common = {
 export const censusLayersConfig = {
   puma: {
     ...common,
-    routePath: '/Census/puma/:field/:id',
+    routePath: '/karte/Census/puma/:field/:id',
     sourceID: 'puma',
     sourceLayer: 'puma',
     tableName: 'puma',
-    url: 'mapbox://elalliance.ckmyzhyit0n4b21mxt9rdkeiy-7w6dn',
+    url: 'placeholder',
     visContextKey: 'showNeighbs',
   },
   tract: {
     ...common,
-    routePath: '/Census/tract/:field/:id',
+    routePath: '/karte/Census/tract/:field/:id',
     sourceID: 'tract',
     sourceLayer: 'tract',
     tableName: 'tract',
-    url: 'mapbox://elalliance.ckmz05zuf04p421nltfeih779-91sof',
+    url: 'placeholder',
     visContextKey: 'showCounties',
   },
 }

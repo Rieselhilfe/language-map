@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 
 import { useMapToolsState } from 'components/context'
+import { UI_NUMBER_OF_SPEAKERS } from 'components/config'
 import { LegendBarProps, LegendMarkersProps } from './types'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -78,7 +79,7 @@ const LegendMarkers: FC<LegendMarkersProps> = (props) => {
         <LegendMarker value={Math.floor((high / 4) * 3).toLocaleString()} />
         <LegendMarker value={high.toLocaleString()} />
       </div>
-      <div className={classes.legendTitle}>Number of speakers</div>
+      <div className={classes.legendTitle}>{UI_NUMBER_OF_SPEAKERS}</div>
     </>
   )
 }

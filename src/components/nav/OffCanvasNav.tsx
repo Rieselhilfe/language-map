@@ -26,8 +26,8 @@ export const OffCanvasNav: FC<OffCanvasNavProps> = (props) => {
   const { isOpen, setIsOpen } = props
   const [feedbackModalOpen, setFeedbackModalOpen] = useState<boolean>(false)
   const classes = useStyles()
-  const iframeSrc =
-    'https://docs.google.com/forms/d/e/1FAIpQLSe5VQ3rLOXett6xN_lUUqm5X88rb5NgWeF6bbObRX9Sconc2w/viewform?embedded=true'
+  // const iframeSrc =
+  //  'https://docs.google.com/forms/d/e/1FAIpQLSe5VQ3rLOXett6xN_lUUqm5X88rb5NgWeF6bbObRX9Sconc2w/viewform?embedded=true'
 
   const closeIt = () => setIsOpen(!isOpen)
 
@@ -53,19 +53,7 @@ export const OffCanvasNav: FC<OffCanvasNavProps> = (props) => {
         open={feedbackModalOpen}
         onClose={() => setFeedbackModalOpen(false)}
       >
-        <div style={{ height: '75vh' }}>
-          <iframe
-            src={iframeSrc}
-            width={window && window.innerWidth <= 640 ? '100%' : 640}
-            height="100%"
-            frameBorder="0"
-            marginHeight={0}
-            marginWidth={0}
-            title="Feedback and questions"
-          >
-            Loading…
-          </iframe>
-        </div>
+        <div style={{ height: '75vh' }}>Kommt bald!</div>
       </SimpleDialog>
       <Drawer
         open={isOpen}
@@ -83,3 +71,15 @@ export const OffCanvasNav: FC<OffCanvasNavProps> = (props) => {
     </>
   )
 }
+
+// <iframe
+// src={iframeSrc}
+// width={window && window.innerWidth <= 640 ? '100%' : 640}
+// height="100%"
+// frameBorder="0"
+// marginHeight={0}
+// marginWidth={0}
+// title="Feedback and questions"
+// >
+// Loading…
+// </iframe>

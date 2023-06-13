@@ -193,7 +193,7 @@ export const Map: FC<Types.MapProps> = (props) => {
 
     if (topLangFeat) {
       history.push(
-        `/Explore/Language/${topLangFeat.properties?.Language}/${topLangFeat.properties?.id}`
+        `/karte/Explore/Language/${topLangFeat.properties?.Language}/${topLangFeat.properties?.id}`
       )
 
       return // no need to check for anything else
@@ -218,12 +218,12 @@ export const Map: FC<Types.MapProps> = (props) => {
       const uniqueID = properties.name || properties.GEOID
 
       if (source === 'neighborhoods') {
-        targetRoute = `/Explore/Neighborhood/${uniqueID}`
+        targetRoute = `/karte/Explore/Neighborhood/${uniqueID}`
       } else if (source === 'counties') {
-        targetRoute = `/Explore/County/${uniqueID}`
+        targetRoute = `/karte/Explore/County/${uniqueID}`
       } else if (censusActiveField) {
         const { id, scope } = censusActiveField
-        targetRoute = `/Census/${scope}/${id}/${uniqueID}`
+        targetRoute = `/karte/Census/${scope}/${id}/${uniqueID}`
       }
 
       history.push(targetRoute)
@@ -231,7 +231,7 @@ export const Map: FC<Types.MapProps> = (props) => {
       return
     }
 
-    history.push(targetRoute || '/Explore/Language/none') // no feat. selected
+    history.push(targetRoute || '/karte/Explore/Language/none') // no feat. selected
   }
 
   function onMapCtrlClick(actionID: Types.MapControlAction) {

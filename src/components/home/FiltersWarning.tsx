@@ -6,6 +6,12 @@ import { Link } from '@material-ui/core'
 import { GlobalContext } from 'components/context'
 import { Explanation } from 'components/generic'
 import { routes } from 'components/config/api'
+import {
+  UI_WARNING_FILTERS_1,
+  UI_WARNING_FILTERS_2,
+  UI_WARNING_FILTERS_3,
+  UI_WARNING_FILTERS_4,
+} from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -60,8 +66,8 @@ export const FiltersWarning: FC = () => {
     <Explanation className={classes.inner}>
       {BadgeDot}
       <div>
-        Current filters have been applied and may affect results. You can{' '}
-        {ClearFilters} or {TableLink} them if needed.
+        {UI_WARNING_FILTERS_1}. {UI_WARNING_FILTERS_2} {ClearFilters}{' '}
+        {UI_WARNING_FILTERS_3} {TableLink} {UI_WARNING_FILTERS_4}
       </div>
     </Explanation>
   )

@@ -13,6 +13,7 @@ import {
   ShareButtonsWrap,
 } from 'components/generic'
 import { sortArrOfObjects } from 'components/legend/utils'
+import { UI_NEIGHBORHOOD, UI_SHARE } from 'components/config'
 import { CardListWrap } from './CardList'
 import { useAirtable } from './hooks'
 import { TonsWithAddl, MidLevelExploreProps } from './types'
@@ -104,7 +105,7 @@ export const NeighborhoodsInstance: FC<MidLevelExploreProps> = (props) => {
     County,
   } = data[0] || {}
 
-  const shareSrcAndTitle = `${value} - Languages of New York City Map`
+  const shareSrcAndTitle = `${value} - Languages of Berlin Map`
   const Extree = (
     <>
       <div className={classes.buttonWrap}>
@@ -117,10 +118,13 @@ export const NeighborhoodsInstance: FC<MidLevelExploreProps> = (props) => {
           startIcon={<FiShare />}
           onClick={() => setShowShareBtns(!showShareBtns)}
         >
-          <span className={classes.hideOnMobile}>Share</span>
+          <span className={classes.hideOnMobile}>{UI_SHARE}</span>
         </Button>
       </div>
-      <ShareButtonsWrap shareText="neighborhood" showShareBtns={showShareBtns}>
+      <ShareButtonsWrap
+        shareText={UI_NEIGHBORHOOD}
+        showShareBtns={showShareBtns}
+      >
         <ShareButtons
           spacing={2}
           source={shareSrcAndTitle}

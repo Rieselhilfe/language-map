@@ -6,6 +6,7 @@ import {
   useLabelAndSymbDispatch,
 } from 'components/context/SymbAndLabelContext'
 import { InstanceLevelSchema } from 'components/context/types'
+import { UI_SYMBOLIZE_BY } from 'components/config'
 import { commonSelectProps } from './config'
 
 // TODO: consider passing down some of the global stuff as props
@@ -28,7 +29,7 @@ export const LayerSymbSelect: FC = () => {
   return (
     <TextField
       {...commonSelectProps}
-      label="Symbolize by"
+      label={UI_SYMBOLIZE_BY}
       value={symbLabelState.activeSymbGroupID}
       onChange={handleChange}
       inputProps={{ name: 'symbology', id: 'lang-symb-select' }}

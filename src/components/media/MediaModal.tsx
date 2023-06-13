@@ -10,6 +10,11 @@ import {
 } from '@material-ui/core'
 
 import { SimpleDialog } from 'components/generic/modals'
+import {
+  UI_BACK_TO_MAP,
+  UI_LOADING,
+  UI_MEDIA_LOAD_ERROR,
+} from 'components/config'
 import { MediaModalProps, ModalContentProps, APIresponse } from './types'
 import * as utils from './utils'
 
@@ -60,7 +65,7 @@ const MediaErrorMsg: FC<{ url: string }> = (props) => {
   return (
     <>
       <Typography style={{ marginBottom: 16 }}>
-        Something went wrong looking for this:
+        {UI_MEDIA_LOAD_ERROR}
       </Typography>
       <Typography style={{ marginBottom: 16 }}>{url}</Typography>
     </>
@@ -84,7 +89,7 @@ const MediaModalContent: FC<ModalContentProps> = (props) => {
       // TODO: convert text and circular progress into reusable component
       <Container maxWidth="md" className={classes.dialogContent}>
         <Typography variant="h4" component="h2" style={{ marginBottom: 16 }}>
-          Loading...
+          {UI_LOADING}
         </Typography>
         <CircularProgress color="inherit" size={38} />
       </Container>
@@ -171,7 +176,7 @@ export const MediaModal: FC<MediaModalProps> = (props) => {
         <MediaModalContent url={url} />
         <div>
           <Button variant="contained" onClick={() => closeModal()}>
-            Back to map
+            {UI_BACK_TO_MAP}
           </Button>
         </div>
       </ReactQueryCacheProvider>

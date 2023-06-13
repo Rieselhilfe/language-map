@@ -8,6 +8,11 @@ import {
   Typography,
 } from '@material-ui/core'
 
+import {
+  UI_CONTINUE,
+  UI_LEGAL_ACK_WELCOME_DIALOG,
+  UI_SHOW_ON_STARTUP,
+} from 'components/config'
 import { HIDE_WELCOME_LOCAL_STG_KEY } from './config'
 
 type WelcomeFooterProps = {
@@ -94,8 +99,7 @@ export const WelcomeFooter: FC<WelcomeFooterProps> = (props) => {
   return (
     <DialogActions className={welcomeFootRoot} disableSpacing>
       <Typography variant="caption" className={haveReadText}>
-        By continuing I acknowledge that I have read and accept the above
-        information.
+        {UI_LEGAL_ACK_WELCOME_DIALOG}
       </Typography>
       {!localStgError && (
         <FormControlLabel
@@ -108,7 +112,7 @@ export const WelcomeFooter: FC<WelcomeFooterProps> = (props) => {
               size="small"
             />
           }
-          label="Show on startup"
+          label={UI_SHOW_ON_STARTUP}
         />
       )}
       <Button
@@ -117,7 +121,7 @@ export const WelcomeFooter: FC<WelcomeFooterProps> = (props) => {
         variant="contained"
         className={continueBtn}
       >
-        Continue
+        {UI_CONTINUE}
       </Button>
     </DialogActions>
   )

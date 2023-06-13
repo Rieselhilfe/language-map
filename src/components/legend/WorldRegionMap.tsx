@@ -3,6 +3,17 @@ import { Link } from '@material-ui/core'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 
 import { ToggleableSection, Explanation } from 'components/generic'
+import {
+  UI_CLICK_ANY_WORLD_REGION,
+  UI_HIDE,
+  UI_SHOW,
+  UI_WORLD_MAP,
+  UI_WORLD_MAP_TEXT_1,
+  UI_WORLD_MAP_TEXT_2,
+  UI_WORLD_MAP_TEXT_3,
+  UI_WORLD_MAP_TEXT_4,
+  UI_WORLD_MAP_TEXT_UN_GEOSCHEME,
+} from 'components/config'
 
 const WORLD_MAP_IMG_SRC =
   'https://i1.wp.com/languagemapping.org/wp-content/uploads/2020/08/worldLangsMap.jpg?w=884&ssl=1'
@@ -34,14 +45,13 @@ export const WorldRegionMap: FC = () => {
         setShowWorldMap(!showWorldMap)
       }}
     >
-      {showWorldMap ? 'Hide' : 'Show'} world map
+      {UI_WORLD_MAP} {showWorldMap ? UI_HIDE : UI_SHOW}
     </Link>
   )
 
   const WorldMapTip = (
     <p>
-      Click any world region above to see languages from that region which are
-      spoken locally. {WorldMapToggle}
+      {UI_CLICK_ANY_WORLD_REGION} {WorldMapToggle}
     </p>
   )
 
@@ -49,25 +59,25 @@ export const WorldRegionMap: FC = () => {
     <Explanation className={classes.root}>
       {WorldMapTip}
       <ToggleableSection show={showWorldMap}>
-        This map was based on the{' '}
+        {UI_WORLD_MAP_TEXT_1}{' '}
         <a
-          href="https://en.wikipedia.org/wiki/United_Nations_geoscheme"
+          href="https://de.wikipedia.org/wiki/Liste_der_geographischen_Regionen_nach_den_Vereinten_Nationen"
           target="_blank"
           rel="noopener noreferrer"
           title="UN geoscheme wikipedia page"
         >
-          United Nations geoscheme
+          {UI_WORLD_MAP_TEXT_UN_GEOSCHEME}
         </a>
-        . You can also view the{' '}
+        . {UI_WORLD_MAP_TEXT_2}{' '}
         <a
           href={WORLD_MAP_IMG_SRC}
           target="_blank"
           rel="noopener noreferrer"
           title="World regions map image"
         >
-          full-size version
+          {UI_WORLD_MAP_TEXT_3}
         </a>{' '}
-        in a new tab.
+        {UI_WORLD_MAP_TEXT_4}
         <img
           src={WORLD_MAP_IMG_SRC}
           alt="Global regions based on UN geoscheme"

@@ -103,11 +103,11 @@ export const GeocoderPopout: FC<GeocoderPopoutProps> = (props) => {
     <div className={classes.root}>
       <div ref={geocoderContainerRef} />
       <Geocoder
-        bbox={[-77.5, 38.4, -70.7, 42.89]}
+        bbox={[13.25, 52.35, 13.55, 52.65]} // 13.25, 52.35, 13.55, 52.65
         clearAndBlurOnEsc
         collapsed
         containerRef={geocoderContainerRef}
-        countries="us"
+        countries="de"
         // inputValue="Astoria" // good for debugging since it stays open
         limit={3} // default: 5
         mapboxApiAccessToken={MAPBOX_TOKEN}

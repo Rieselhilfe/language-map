@@ -9,6 +9,14 @@ import { FaMapMarkedAlt } from 'react-icons/fa'
 
 import { ShareButtons, ShareButtonsWrap } from 'components/generic'
 import { routes } from 'components/config/api'
+import {
+  UI_AUDIO,
+  UI_DE_SELECT,
+  UI_LISTEN_TO_AUDIO,
+  UI_VIDEO,
+  UI_VIEW_IN_MAP,
+  UI_WATCH_VIDEO,
+} from 'components/config'
 import { MediaListItemProps, MediaProps } from './types'
 import { MediaModal } from './MediaModal'
 
@@ -45,9 +53,9 @@ const MediaListItem: FC<MediaListItemProps> = (props) => {
   let title = ''
 
   if (label === 'Audio') {
-    title = 'Listen to audio for this community'
+    title = UI_LISTEN_TO_AUDIO
   } else if (label === 'Video') {
-    title = 'Watch video for this community'
+    title = UI_WATCH_VIDEO
   }
 
   return (
@@ -78,9 +86,7 @@ export const Media: FC<MediaProps> = (props) => {
   const [showShareBtns, setShowShareBtns] = useState<boolean>(false)
   const classes = useStyles({ showShareBtns })
   const { Language, Video, Audio, Description, name } = data
-  const shareSrcAndTitle = `${
-    Language || name
-  } - Languages of New York City Map`
+  const shareSrcAndTitle = `${Language || name} - Languages of Berlin Map`
   // archive.org `embed` format:
   // 'https://archive.org/embed/ela_kabardian_comparative?playlist=1'
 
@@ -94,7 +100,7 @@ export const Media: FC<MediaProps> = (props) => {
           bold={Video !== undefined}
           disabled={!Video}
           icon={<FiVideo />}
-          label="Video"
+          label={UI_VIDEO}
           type="Video"
           handleClick={() => setMediaUrl(Video)}
         />
@@ -102,7 +108,7 @@ export const Media: FC<MediaProps> = (props) => {
           bold={Audio !== undefined}
           disabled={!Audio}
           icon={<AiOutlineSound />}
-          label="Audio"
+          label={UI_AUDIO}
           type="Audio"
           handleClick={() => setMediaUrl(Audio)}
         />
@@ -110,19 +116,21 @@ export const Media: FC<MediaProps> = (props) => {
         {!omitClear &&
           ((!isTable && (
             <MediaListItem
-              label="De-select"
+              label={UI_DE_SELECT}
               icon={<IoIosCloseCircleOutline />}
               type="clear"
-              handleClick={() => history.push('/Explore/Language/none')}
+              handleClick={() => history.push('/karte/Explore/Language/none')}
             />
           )) || (
             <MediaListItem
-              label="View in map"
+              label={UI_VIEW_IN_MAP}
               icon={<FaMapMarkedAlt />}
               type="view"
               handleClick={() =>
                 history.push(
-                  `/Explore/Language/${Language || name}/${isTable?.params?.id}`
+                  `/karte/Explore/Language/${Language || name}/${
+                    isTable?.params?.id
+                  }`
                 )
               }
             />

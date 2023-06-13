@@ -29,8 +29,6 @@ export const MoreLikeThis: FC<Types.TonsOfData> = (props) => {
 
   const {
     'World Region': WorldRegion,
-    Country,
-    countryImg,
     Macrocommunity: macro,
     worldRegionColor,
   } = data
@@ -43,20 +41,6 @@ export const MoreLikeThis: FC<Types.TonsOfData> = (props) => {
         to={`${routes.explore}/World Region/${WorldRegion}`}
         icon={<SwatchOnly backgroundColor={worldRegionColor} />}
       />
-      {Country.map((countryName, i) => (
-        <Chip
-          key={countryName}
-          text={countryName}
-          to={`${routes.explore}/Country/${countryName}`}
-          icon={
-            <img
-              className="country-flag"
-              alt={`${countryName} flag`}
-              src={countryImg[i].url}
-            />
-          }
-        />
-      ))}
       {macro &&
         macro.map((macroName, i) => (
           <Chip

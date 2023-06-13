@@ -3,7 +3,7 @@ import React, { FC } from 'react'
 import { BasicExploreIntro } from 'components/explore'
 import { LoadingIndicatorBar } from 'components/generic/modals'
 import { UItextFromAirtable } from 'components/generic'
-import { icons } from 'components/config'
+import { UI_COULD_NOT_LOAD, icons } from 'components/config'
 import { CardListWrap } from './CardList'
 import { CustomCard } from './CustomCard'
 import { useAirtable } from './hooks'
@@ -27,14 +27,14 @@ export const Explore: FC = () => {
         noAppear={!isLoading}
       />
       {isLoading && <LoadingIndicatorBar omitText />}
-      {error && 'Could not load'}
+      {error && UI_COULD_NOT_LOAD}
       <CardListWrap>
         {data.map(({ name, plural, definition }, i) => (
           <CustomCard
             key={name}
             icon={icons[name] || null}
             title={plural || ''} // TODO: ugh
-            url={`/Explore/${name}`}
+            url={`/karte/Explore/${name}`}
             timeout={350 + i * 250}
             footer={definition}
           />

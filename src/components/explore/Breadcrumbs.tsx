@@ -56,7 +56,7 @@ export const Breadcrumbs: FC = () => {
 
   return (
     <div aria-label="breadcrumb" className={classes.root}>
-      <RouterLink to="/" title="Home" style={{ display: 'flex' }}>
+      <RouterLink to="/karte/" title="Home" style={{ display: 'flex' }}>
         <BiHomeAlt />
       </RouterLink>
       {pathnames.map((value, index) => {
@@ -72,7 +72,7 @@ export const Breadcrumbs: FC = () => {
             {(last && (
               <span>
                 <Switch>
-                  <Route path="/Explore/Language/:language/:id" exact>
+                  <Route path="/karte/Explore/Language/:language/:id" exact>
                     <CurrentDetailCrumb />
                   </Route>
                   <Route>

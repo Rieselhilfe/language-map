@@ -6,6 +6,7 @@ import {
   useLabelAndSymbDispatch,
 } from 'components/context/SymbAndLabelContext'
 import { InstanceLevelSchema, LangSchemaCol } from 'components/context/types'
+import { UI_LABEL_BY } from 'components/config'
 import { commonSelectProps } from './config'
 
 export const LayerLabelSelect: FC = () => {
@@ -26,7 +27,7 @@ export const LayerLabelSelect: FC = () => {
   return (
     <TextField
       {...commonSelectProps}
-      label="Label by"
+      label={UI_LABEL_BY}
       value={symbLabelState.activeLabelID}
       onChange={handleChange}
       inputProps={{ name: 'label', id: 'lang-label-TextField' }}

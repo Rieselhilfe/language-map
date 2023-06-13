@@ -6,6 +6,11 @@ import { GoGear } from 'react-icons/go'
 
 import { ShareButtons } from 'components/generic'
 import { HIDE_WELCOME_LOCAL_STG_KEY } from 'components/about'
+import {
+  UI_SETTINGS,
+  UI_SHARE_THIS_PROJECT,
+  UI_SHOW_WELCOME_SCREEN,
+} from 'components/config'
 
 type SettingsProps = {
   smallerTextClass: string
@@ -65,7 +70,7 @@ export const Settings: FC<SettingsProps> = (props) => {
   const Share = (
     <>
       <Typography component="h3" className={settingsHeading}>
-        <FiShare /> Share this project
+        <FiShare /> {UI_SHARE_THIS_PROJECT}
       </Typography>
       <ShareButtons />
     </>
@@ -78,7 +83,7 @@ export const Settings: FC<SettingsProps> = (props) => {
       {Share}
       <Typography component="h3" className={settingsHeading}>
         <GoGear />
-        Settings
+        {UI_SETTINGS}
       </Typography>
       <FormControlLabel
         classes={{
@@ -96,7 +101,7 @@ export const Settings: FC<SettingsProps> = (props) => {
             size="small"
           />
         }
-        label="Show welcome screen on startup"
+        label={UI_SHOW_WELCOME_SCREEN}
       />
     </>
   )

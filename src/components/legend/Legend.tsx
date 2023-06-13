@@ -5,6 +5,7 @@ import { Typography } from '@material-ui/core'
 
 import { LegendSwatch } from 'components/legend'
 import { Explanation, SubtleText } from 'components/generic'
+import { UI_SOURCES } from 'components/config'
 import * as Types from './types'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -60,7 +61,7 @@ export const Legend: FC<Types.LegendProps> = (props) => {
               size={size ? size * 20 : 5}
               legendLabel={name}
               backgroundColor={item['icon-color']}
-              to={routeName ? `/Explore/${routeName}/${name}` : undefined}
+              to={routeName ? `/karte/Explore/${routeName}/${name}` : undefined}
               component={routeName ? RouterLink : 'li'}
             />
           )
@@ -68,7 +69,7 @@ export const Legend: FC<Types.LegendProps> = (props) => {
       </ul>
       {sourceCredits && (
         <SubtleText className={classes.sourceCredits}>
-          <b>Sources:</b> {sourceCredits}
+          <b>{UI_SOURCES}</b> {sourceCredits}
         </SubtleText>
       )}
     </div>

@@ -4,6 +4,7 @@ import React, { FC } from 'react'
 import { createStyles, makeStyles, Theme } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
 import { BsTable } from 'react-icons/bs'
+import { UI_DATA } from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -30,7 +31,7 @@ export const ResultsTitle: FC = () => {
   return (
     <Typography variant="h4" className={classes.tableTitleRoot}>
       <BsTable className={classes.titleIcon} />
-      Data
+      {UI_DATA}
     </Typography>
   )
 }

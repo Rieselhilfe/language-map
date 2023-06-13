@@ -3,7 +3,7 @@ import * as Sentry from '@sentry/react'
 // import { ReactQueryDevtools } from 'react-query-devtools'
 import Airtable from 'airtable'
 
-import { AIRTABLE_API_KEY } from 'components/config'
+import { AIRTABLE_API_KEY, UI_CLICK_HERE_TO_RESET } from 'components/config'
 import { PanelContextProvider } from 'components/panels'
 import { ResultsModal } from 'components/results'
 import { AppWrap } from './AppWrap'
@@ -38,7 +38,7 @@ export const App: FC = () => {
               resetError()
             }}
           >
-            Click here to reset
+            {UI_CLICK_HERE_TO_RESET}
           </button>
         </>
       )}

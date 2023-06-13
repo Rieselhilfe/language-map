@@ -6,6 +6,7 @@ import { DialogCloseBtn, SlideUp } from 'components/generic/modals'
 import { InstanceLevelSchema, GlobalContext } from 'components/context'
 import { useAirtable } from 'components/explore/hooks'
 import { routes } from 'components/config/api'
+import { UI_EXIT_TO_MAP } from 'components/config'
 import { useStyles } from './styles'
 import { ResultsTable } from './ResultsTable'
 import { LocWithState } from '../config/types'
@@ -109,7 +110,7 @@ export const ResultsModal: FC = () => {
       maxWidth="lg"
       PaperProps={{ className: classes.resultsModalPaper }}
     >
-      <DialogCloseBtn onClose={handleClose} tooltip="Exit to map" />
+      <DialogCloseBtn onClose={handleClose} tooltip={UI_EXIT_TO_MAP} />
       {error ? 'An error occurred fetching table data' : null}
       {!error && <ResultsTable data={data} />}
     </Dialog>

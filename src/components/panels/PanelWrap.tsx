@@ -113,7 +113,7 @@ export const PanelWrap: FC<PanelWrapProps> = (props) => {
       </Hidden>
       <div className={classes.panelContent} ref={panelRef}>
         <div id={targetElemID} />
-        <Route path="/" exact>
+        <Route path="/karte/" exact>
           <div style={{ marginTop: '-0.75rem', marginBottom: '1rem' }}>
             <SearchTabs mapRef={mapRef} />
           </div>

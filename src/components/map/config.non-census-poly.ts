@@ -9,7 +9,7 @@ const sharedFillOpacity = [
 export const nonCensusPolygonConfig = {
   neighborhoods: {
     linePaint: { ...sharedLinePaint, 'line-color': '#FFA500' },
-    routePath: '/Explore/Neighborhood/:id',
+    routePath: '/karte/Explore/Neighborhood/:id',
     selLineColor: 'rgb(255, 165, 0)',
     selFillColor: 'rgb(255, 165, 0)',
     sourceID: 'neighborhoods',
@@ -28,7 +28,7 @@ export const nonCensusPolygonConfig = {
       ...sharedLinePaint,
       'line-color': 'hsl(209, 42%, 73%)',
     },
-    routePath: '/Explore/County/:id',
+    routePath: '/karte/Explore/County/:id',
     selLineColor: 'hsl(193, 73%, 52%)',
     selFillColor: 'hsla(193, 63%, 42%, 0.85)',
     sourceID: 'counties',

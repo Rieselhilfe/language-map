@@ -3,6 +3,7 @@ import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
 import { usePanelDispatch } from 'components/panels'
 import { Tooltip, Zoom, Fab } from '@material-ui/core'
 import { MdKeyboardArrowRight } from 'react-icons/md'
+import { UI_OPEN_PANEL } from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -33,7 +34,7 @@ export const ShowPanelBtn: FC<{ panelOpen: boolean }> = (props) => {
 
   return (
     <Zoom in={!panelOpen}>
-      <Tooltip title="Open panel">
+      <Tooltip title={UI_OPEN_PANEL}>
         <Fab
           size="small"
           aria-label="panel open"

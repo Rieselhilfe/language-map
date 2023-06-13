@@ -4,6 +4,7 @@ import { GoFile } from 'react-icons/go'
 import { FaMapMarkedAlt } from 'react-icons/fa'
 
 import { InstanceLevelSchema, InternalWithLang } from 'components/context/types'
+import { UI_SHOW_IN_MAP, UI_VIEW_FULL_SCREEN_DETAILS } from 'components/config'
 import { CountryListItemWithFlag } from './CountryListItemWithFlag'
 import { EndoImageModal } from './EndoImageModal'
 
@@ -44,7 +45,11 @@ export function renderEndoColumn(
 // This is a misleading name since it's now "County", but it does the same thing
 export function renderDescripCol(): string | React.ReactNode {
   return (
-    <IconButton title="View full-screen details" size="small" color="secondary">
+    <IconButton
+      title={UI_VIEW_FULL_SCREEN_DETAILS}
+      size="small"
+      color="secondary"
+    >
       <GoFile />
     </IconButton>
   )
@@ -52,7 +57,7 @@ export function renderDescripCol(): string | React.ReactNode {
 
 export function renderIDcolumn(): string | React.ReactNode {
   return (
-    <IconButton title="Show in map" size="small" color="secondary">
+    <IconButton title={UI_SHOW_IN_MAP} size="small" color="secondary">
       <FaMapMarkedAlt />
     </IconButton>
   )

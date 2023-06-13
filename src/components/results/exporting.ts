@@ -84,7 +84,7 @@ export const exportPdf = (
   // NOTE: if additional fonts are to be added, use this converter to encode:
   // https://rawgit.com/MrRio/jsPDF/master/fontconverter/fontconverter.html
   // then massage it into the same JSON format as the other(s).
-  const GENTIUM_PATH = '/fonts/GentiumPlus-R-normal.json'
+  const GENTIUM_PATH = '/karte/fonts/GentiumPlus-R-normal.json'
 
   const columns = getColumns(columnList)
   const data = getData(columns, initialData)

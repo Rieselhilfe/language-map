@@ -13,33 +13,33 @@ export const reactQueryDefaults = {
 }
 
 const censusRoutes = {
-  local: '/Census',
-  censusDetail: '/Census/:table/:field/:id',
-  pumaDetail: '/Census/puma/:field/:id',
-  tractDetail: '/Census/tract/:field/:id',
+  local: '/karte/Census',
+  censusDetail: '/karte/Census/:table/:field/:id',
+  pumaDetail: '/karte/Census/puma/:field/:id',
+  tractDetail: '/karte/Census/tract/:field/:id',
 } as {
   [key: string]: RouteLocation
 }
 
 const infoRoutes = {
-  about: '/Info/About',
-  feedback: '/Info/Feedback',
-  help: '/Info/Help',
-  info: '/Info',
+  about: '/karte/Info/About',
+  feedback: '/karte/Info/Feedback',
+  help: '/karte/Info/Help',
+  info: '/karte/Info',
 }
 
 export const routes = {
-  explore: '/Explore',
-  home: '/',
-  neighborhood: '/Explore/Neighborhood',
-  neighbInstance: '/Explore/Neighborhood/:id',
-  countyInstance: '/Explore/County/:id',
-  data: '/Data', // aka "table"
-  dataDetail: '/Data/:id', // aka "table"
-  none: '/Explore/Language/none',
-  details: '/Explore/Language/:value/:id',
-  countiesBase: '/Explore/County',
-  languageInstance: '/Explore/Language/:language',
+  explore: '/karte/Explore',
+  home: '/karte/',
+  neighborhood: '/karte/Explore/Neighborhood',
+  neighbInstance: '/karte/Explore/Neighborhood/:id',
+  countyInstance: '/karte/Explore/County/:id',
+  data: '/karte/Data', // aka "table"
+  dataDetail: '/karte/Data/:id', // aka "table"
+  none: '/karte/Explore/Language/none',
+  details: '/karte/Explore/Language/:value/:id',
+  countiesBase: '/karte/Explore/County',
+  languageInstance: '/karte/Explore/Language/:language',
   ...censusRoutes,
   ...infoRoutes,
 } as {

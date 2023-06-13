@@ -10,6 +10,12 @@ import { RiFilterOffFill } from 'react-icons/ri'
 import { GlobalContext } from 'components/context'
 import { routes } from 'components/config/api'
 import { PopoverWithUItext } from 'components/generic'
+import {
+  UI_CLEAR_FILTERS,
+  UI_LOCAL_COMMUNITY_DATA,
+  UI_SET_TABLE_FILTERS,
+  UI_VIEW_RESULTS_IN_MAP,
+} from 'components/config'
 import { ResultsTitle } from './ResultsTitle'
 
 import * as Types from './types'
@@ -194,7 +200,7 @@ export const ResultsToolbar: FC<Types.ResultsToolbarProps> = (props) => {
       </div>
       <div className={classes.toolbarBtns}>
         <Button
-          title="Set table filters and return to map"
+          title={UI_SET_TABLE_FILTERS}
           color="secondary"
           variant="contained"
           size="small"
@@ -202,10 +208,10 @@ export const ResultsToolbar: FC<Types.ResultsToolbarProps> = (props) => {
           onClick={() => mapFilterBtnClick()}
           disabled={noResults}
         >
-          View results in map
+          {UI_VIEW_RESULTS_IN_MAP}
         </Button>
         <Button
-          title="Clear table filters"
+          title={UI_CLEAR_FILTERS}
           color="secondary"
           variant="contained"
           disabled={!clearBtnEnabled}
@@ -213,12 +219,12 @@ export const ResultsToolbar: FC<Types.ResultsToolbarProps> = (props) => {
           startIcon={<RiFilterOffFill />}
           onClick={() => clearFiltersBtnClick(true)}
         >
-          Clear filters
+          {UI_CLEAR_FILTERS}
         </Button>
         <PopoverWithUItext id="table-info-btn" />
       </div>
       <small className={`${classes.localIndicator} ${classes.localCommLegend}`}>
-        <BiMapPin /> Local community data
+        <BiMapPin /> {UI_LOCAL_COMMUNITY_DATA}
       </small>
     </div>
   )

@@ -28,7 +28,7 @@ export const renderGroup = (params: AutocompleteRenderGroupParams) => {
     // Could NOT get it to style properly if setting component to anything but
     // "div" and could not make it stay sticky either. Frustration station.
     <ListSubheader key={params.group} component="div">
-      <RouterLink to={`/Explore/Language/${params.group}`}>
+      <RouterLink to={`/karte/Explore/Language/${params.group}`}>
         {params.group}
       </RouterLink>
     </ListSubheader>,

@@ -6,6 +6,7 @@ import { RecordDescription } from 'components/results'
 import { DetailedIntro, LangOrEndoIntro } from 'components/details'
 import { FeedbackToggle } from 'components/about'
 import { routes } from 'components/config/api'
+import { UI_SOMETHING_WRONG_COMMUNITY } from 'components/config'
 import { NoFeatSel } from './NoFeatSel'
 import { DetailsProps } from './types'
 import { useDetails } from './hooks'
@@ -38,7 +39,7 @@ const DetailsWrap: FC = () => {
   } = useDetails()
 
   if (isLoading) return null
-  if (error) return <p>Something went wrong looking for this community.</p>
+  if (error) return <p>{UI_SOMETHING_WRONG_COMMUNITY}</p>
   if (notFound)
     return <NoFeatSel reason={`No community found with an id of ${id}.`} />
 
@@ -54,7 +55,7 @@ export const Details: FC<DetailsProps> = (props) => {
   const { Language } = data
   const descripID = instanceDescripID || langDescripID
 
-  document.title = `${Language} - NYC Languages`
+  document.title = `${Language} - Berlin Languages`
 
   return (
     <>

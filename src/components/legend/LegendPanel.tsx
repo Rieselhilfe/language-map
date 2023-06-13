@@ -10,6 +10,11 @@ import {
 } from 'components/legend'
 import { useSymbAndLabelState } from 'components/context'
 import { FiltersWarning } from 'components/home/FiltersWarning'
+import {
+  UI_LEGEND,
+  UI_LEGEND_LOADING_TEXT,
+  UI_SYMBOL_LEGEND_ERROR,
+} from 'components/config'
 import { WorldRegionMap } from './WorldRegionMap'
 import { useLegendConfig } from './hooks'
 import { LangLabelsToggle } from './LangPointsToggle'
@@ -78,7 +83,9 @@ export const LegendPanel: FC = () => {
 
   if (error)
     return (
-      <p>Something went wrong setting up the {activeSymbGroupID} legend.</p>
+      <p>
+        {UI_SYMBOL_LEGEND_ERROR} {activeSymbGroupID}.
+      </p>
     )
 
   return (
@@ -92,10 +99,10 @@ export const LegendPanel: FC = () => {
         <LangPointsToggle />
         <LangLabelsToggle />
       </div>
-      {isLoading && <p>Loading legend info...</p>}
+      {isLoading && <p>{UI_LEGEND_LOADING_TEXT}</p>}
       {!isLoading && (
         <>
-          <PanelSectionHeading>Legend</PanelSectionHeading>
+          <PanelSectionHeading>{UI_LEGEND}</PanelSectionHeading>
           <div className={classes.groupedLegend}>
             {data.map((item) => (
               <Legend

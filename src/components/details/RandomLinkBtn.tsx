@@ -4,6 +4,11 @@ import { Button } from '@material-ui/core'
 import { FaRandom } from 'react-icons/fa'
 
 import { GlobalContext } from 'components/context'
+import {
+  UI_LOADING_LANGUAGES,
+  UI_NO_COMMUNITIES_AVAILABLE,
+  UI_RANDOM_LINK_BUTTON_TEXT,
+} from 'components/config'
 
 export const RandomLinkBtn: FC = () => {
   const { state } = useContext(GlobalContext)
@@ -20,9 +25,9 @@ export const RandomLinkBtn: FC = () => {
     randoLang = langFeatures[randoFeatIndex].Language
   }
 
-  if (!langFeatsLenCache) btnText = 'Loading languages...'
-  else if (!langFeatures.length) btnText = 'No communities available'
-  else btnText = 'Show me a site'
+  if (!langFeatsLenCache) btnText = UI_LOADING_LANGUAGES
+  else if (!langFeatures.length) btnText = UI_NO_COMMUNITIES_AVAILABLE
+  else btnText = UI_RANDOM_LINK_BUTTON_TEXT
 
   return (
     <Button
@@ -32,7 +37,9 @@ export const RandomLinkBtn: FC = () => {
       size="small"
       disabled={!langFeatsLenCache || !langFeatures.length}
       startIcon={<FaRandom />}
-      to={randoLang ? `/Explore/Language/${randoLang}/${randoFeatID}` : '/'}
+      to={
+        randoLang ? `/karte/Explore/Language/${randoLang}/${randoFeatID}` : '/'
+      }
     >
       {btnText}
     </Button>

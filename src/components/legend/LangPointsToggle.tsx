@@ -7,6 +7,11 @@ import {
   useLabelAndSymbDispatch,
   useSymbAndLabelState,
 } from 'components/context/SymbAndLabelContext'
+import {
+  UI_HIDE_LABELS,
+  UI_HIDE_SYMBOLS,
+  UI_HIDE_SYMBOLS_AND_LABELS,
+} from 'components/config'
 
 type CustomFormControlProps = {
   label: React.ReactNode
@@ -60,7 +65,7 @@ export const LangPointsToggle: FC = (props) => {
 
   return (
     <CustomFormControl
-      label="Hide symbols"
+      label={UI_HIDE_SYMBOLS}
       switchControl={
         <Switch
           checked={hideLangPoints}
@@ -83,7 +88,7 @@ export const LangLabelsToggle: FC = (props) => {
 
   return (
     <CustomFormControl
-      label="Hide labels"
+      label={UI_HIDE_LABELS}
       switchControl={
         <Switch
           checked={hideLangLabels}
@@ -109,7 +114,7 @@ export const AllLangDataToggle: FC = () => {
 
   return (
     <CustomFormControl
-      label="Hide symbols and labels"
+      label={UI_HIDE_SYMBOLS_AND_LABELS}
       switchControl={
         <Switch
           checked={hideLangLabels && hideLangPoints}

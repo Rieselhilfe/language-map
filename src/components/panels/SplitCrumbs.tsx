@@ -6,6 +6,7 @@ import { IconButton, Popover, Tooltip } from '@material-ui/core'
 import { AiOutlineUnorderedList } from 'react-icons/ai'
 import { BsArrow90DegUp } from 'react-icons/bs'
 
+import { UI_EXPLORE_NAV_MENU, UI_UP_ONE_LEVEL } from 'components/config'
 import { TimelineCrumbs } from './TimelineCrumbs'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -30,9 +31,9 @@ export const SplitCrumbs: FC = () => {
     handleClose()
   }, [pathname])
 
-  const pathChunks = pathname.split('/')
+  const pathChunks = pathname.split('/').splice(1)
   const notHome = pathChunks.slice(1) // exclude Home
-  const backLink = pathChunks.slice(0, -1).join('/') || '/'
+  const backLink = pathname.split('/').slice(0, -1).join('/') || '/'
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -48,7 +49,7 @@ export const SplitCrumbs: FC = () => {
   return (
     <>
       <div>
-        <Tooltip title="Up one level">
+        <Tooltip title={UI_UP_ONE_LEVEL}>
           <IconButton
             size="small"
             to={backLink}
@@ -58,7 +59,7 @@ export const SplitCrumbs: FC = () => {
             <BsArrow90DegUp />
           </IconButton>
         </Tooltip>
-        <Tooltip title="Explore nav menu">
+        <Tooltip title={UI_EXPLORE_NAV_MENU}>
           <IconButton
             aria-describedby={id}
             size="small"

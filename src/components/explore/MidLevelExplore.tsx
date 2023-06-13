@@ -2,7 +2,7 @@ import React, { FC } from 'react'
 import { useParams, Route } from 'react-router-dom'
 
 import {
-  FlagFromHook,
+  //  FlagFromHook,
   ColoredCircle,
 } from 'components/generic/icons-and-swatches'
 import { BasicExploreIntro } from 'components/panels'
@@ -37,7 +37,7 @@ export const MidLevelExplore: FC<MidLevelExploreProps> = (props) => {
 
   if (field === 'World Region') {
     Icon = <ColoredCircle color={data[0]?.worldRegionColor || 'transparent'} />
-  } else if (field === 'Country') Icon = <FlagFromHook value={value} />
+  } // else if (field === 'Country') Icon = <FlagFromHook value={value} />
 
   // Gross extra steps for Airtable FIND issue, which returns in ARRAYJOIN
   // things like "Dominican Republic" in a "Dominica" query:
@@ -53,7 +53,7 @@ export const MidLevelExplore: FC<MidLevelExploreProps> = (props) => {
         noAppear={!isLoading}
         icon={Icon}
         extree={
-          <Route path="/Explore/County">
+          <Route path="/karte/Explore/County">
             <LayerToggle layerID="counties" />
           </Route>
         }

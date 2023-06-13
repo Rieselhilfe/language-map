@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { Button } from '@material-ui/core'
 import { IoMdCloseCircle } from 'react-icons/io'
+import { UI_CLEAR_FILTERS } from 'components/config'
 
 type ClearFiltersComponent = {
   onClick: () => void
@@ -19,7 +20,7 @@ export const ClearFiltersBtn: FC<ClearFiltersComponent> = (props) => {
       onClick={onClick}
       disabled={!enabled}
     >
-      Clear filters
+      {UI_CLEAR_FILTERS}
     </Button>
   )
 }

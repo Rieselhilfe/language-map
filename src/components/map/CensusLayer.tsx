@@ -61,7 +61,7 @@ export const CensusLayer: FC<CensusLayerProps> = (props) => {
         paint={linePaint}
         layout={{ visibility }}
       />
-      <Route path={`/Census/${sourceID}/:field/:id`} exact>
+      <Route path={`/karte/Census/${sourceID}/:field/:id`} exact>
         <SelectedPolygon {...props} selLineColor="hsl(133, 100%, 47%)" />
       </Route>
     </Source>

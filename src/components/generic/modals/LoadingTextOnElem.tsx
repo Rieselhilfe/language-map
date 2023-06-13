@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import { CircularProgress, Typography } from '@material-ui/core'
+import { UI_LOADING } from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -25,7 +26,7 @@ const useStyles = makeStyles((theme: Theme) =>
 )
 
 export const LoadingTextOnElem: FC<{ text?: string }> = (props) => {
-  const { text = 'Loading...' } = props
+  const { text = UI_LOADING } = props
   const classes = useStyles()
 
   return (

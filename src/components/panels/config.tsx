@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { icons } from 'components/config'
-import { LocalPanel } from 'components/local'
+// import { LocalPanel } from 'components/local'
 import {
   Explore,
   LangCardsList,
@@ -41,12 +41,12 @@ export const navRoutes: MapPanel[] = [
     component: null,
     rootPath: routes.data,
   },
-  {
-    heading: 'Census',
-    icon: icons.Census,
-    component: <LocalPanel />,
-    rootPath: routes.local,
-  },
+  // {
+  //  heading: 'Census',
+  //  icon: icons.Census,
+  //  component: <LocalPanel />,
+  //  rootPath: routes.local,
+  // },
   {
     heading: 'Info',
     icon: icons.Info,
@@ -64,7 +64,7 @@ export const nonNavRoutesConfig = [
   },
   {
     component: <NeighborhoodsLanding />,
-    rootPath: '/Explore/Neighborhood',
+    rootPath: '/karte/Explore/Neighborhood',
     exact: true,
   },
   {
@@ -74,20 +74,20 @@ export const nonNavRoutesConfig = [
   },
   {
     component: <NeighborhoodsInstance />,
-    rootPath: '/Explore/Neighborhood/:value',
+    rootPath: '/karte/Explore/Neighborhood/:value',
     exact: true,
   },
   {
     component: <LangCardsList />,
-    rootPath: '/Explore/:field/:value/:language',
+    rootPath: '/karte/Explore/:field/:value/:language',
   },
   {
     component: <MidLevelExplore tableName="Language" />,
-    rootPath: '/Explore/:field/:value',
+    rootPath: '/karte/Explore/:field/:value',
   },
   {
     component: <ExploreLanding />,
-    rootPath: '/Explore/:field',
+    rootPath: '/karte/Explore/:field',
   },
   ...navRoutes,
 ] as MapPanel[]

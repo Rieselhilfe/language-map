@@ -11,7 +11,11 @@ import {
 } from '@material-ui/lab'
 
 import { RouteableTableNames } from 'components/context/types'
-import { icons } from 'components/config'
+import {
+  UI_NO_COMMUNITY_SELECTED,
+  UI_SITE_DETAILS,
+  icons,
+} from 'components/config'
 
 type TimelineCrumbsProps = {
   pathChunks: [string | RouteableTableNames]
@@ -48,7 +52,9 @@ export const TimelineCrumbs: FC<TimelineCrumbsProps> = (props) => {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-ignore
           icons[chunk]
-        const to = `/${pathChunks.slice(0, pathChunks.length - i).join('/')}`
+        const to = `/karte/${pathChunks
+          .slice(0, pathChunks.length - i)
+          .join('/')}`
         const emptyIconClass = panelIcon ? '' : classes.wideEmptyIcon
 
         return (
@@ -70,11 +76,14 @@ export const TimelineCrumbs: FC<TimelineCrumbsProps> = (props) => {
               {firstOne ? (
                 <b>
                   <Switch>
-                    <Route path="/Explore/Language/:language/:instanceID" exact>
-                      Site Details
+                    <Route
+                      path="/karte/Explore/Language/:language/:instanceID"
+                      exact
+                    >
+                      {UI_SITE_DETAILS}
                     </Route>
-                    <Route path="/Explore/Language/none">
-                      No community selected
+                    <Route path="/karte/Explore/Language/none">
+                      {UI_NO_COMMUNITY_SELECTED}
                     </Route>
                     <Route>{chunk}</Route>
                   </Switch>
@@ -92,7 +101,7 @@ export const TimelineCrumbs: FC<TimelineCrumbsProps> = (props) => {
           <TimelineDot color="secondary">{icons.HomeLink}</TimelineDot>
         </TimelineSeparator>
         <TimelineContent>
-          <RouterLink to="/">Home</RouterLink>
+          <RouterLink to="/karte/">Home</RouterLink>
         </TimelineContent>
       </TimelineItem>
     </Timeline>

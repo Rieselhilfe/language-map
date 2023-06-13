@@ -10,7 +10,14 @@ import {
   ListItemText,
 } from '@material-ui/core'
 
-import { routes, icons } from 'components/config'
+import {
+  routes,
+  icons,
+  UI_ABOUT,
+  UI_CONTACT_FEEDBACK,
+  UI_HELP,
+  UI_USER_MANUAL,
+} from 'components/config'
 import { UItextFromAirtable } from 'components/generic'
 import { Settings } from './Settings'
 
@@ -61,7 +68,7 @@ export const Nav: FC = () => {
               </ListItemIcon>
               <ListItemText
                 classes={{ secondary: smallerText }}
-                primary="About"
+                primary={UI_ABOUT}
                 secondary={<UItextFromAirtable id="info-link--about" />}
               />
             </Link>
@@ -78,7 +85,7 @@ export const Nav: FC = () => {
               </ListItemIcon>
               <ListItemText
                 classes={{ secondary: smallerText }}
-                primary="Contact & Feedback"
+                primary={UI_CONTACT_FEEDBACK}
                 secondary={
                   <UItextFromAirtable id="info-link--contact-feedback" />
                 }
@@ -95,7 +102,7 @@ export const Nav: FC = () => {
               <ListItemIcon className={listItemIcon}>{icons.Help}</ListItemIcon>
               <ListItemText
                 classes={{ secondary: smallerText }}
-                primary="Help"
+                primary={UI_HELP}
                 secondary={<UItextFromAirtable id="info-link--help" />}
               />
             </Link>
@@ -112,7 +119,7 @@ export const Nav: FC = () => {
               </ListItemIcon>
               <ListItemText
                 classes={{ secondary: smallerText }}
-                primary="User Manual"
+                primary={UI_USER_MANUAL}
                 secondary={<UItextFromAirtable id="info-link--user-manual" />}
               />
             </Link>

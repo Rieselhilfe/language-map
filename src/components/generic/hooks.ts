@@ -119,7 +119,7 @@ export const usePageTitle = (): void => {
       const pageTitleCapitalized =
         pageTitleViaPath.charAt(0).toUpperCase() + pageTitleViaPath.slice(1)
 
-      document.title = `${pageTitleCapitalized} - NYC Languages`
+      document.title = `${pageTitleCapitalized} - Berlin Languages`
     }
   }, [censusDetailMatch, detailsMatch, noFeatSelMatch, pathname])
 

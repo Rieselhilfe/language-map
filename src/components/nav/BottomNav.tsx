@@ -171,7 +171,7 @@ export const BottomNav: FC = (props) => {
 
   const NavActions = navRoutes.map((config) => {
     const { rootPath } = config
-    const subRouteStateKey = rootPath.split('/')[1] || '/'
+    const subRouteStateKey = rootPath.split('/')[2] || '/'
     const to = subRoutePath[subRouteStateKey] || rootPath
 
     return (

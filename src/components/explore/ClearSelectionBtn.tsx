@@ -4,6 +4,7 @@ import { Button } from '@material-ui/core'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 
 import { routes } from 'components/config/api'
+import { UI_DE_SELECT } from 'components/config'
 
 type ClearSelectionBtnProps = {
   targetRoute?: string
@@ -25,7 +26,7 @@ export const ClearSelectionBtn: FC<ClearSelectionBtnProps> = (props) => {
       to={targetRoute}
       startIcon={<IoIosCloseCircleOutline />}
     >
-      De-select
+      {UI_DE_SELECT}
     </Button>
   )
 }

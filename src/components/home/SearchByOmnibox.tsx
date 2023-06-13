@@ -11,6 +11,7 @@ import { useAirtable } from 'components/explore/hooks'
 import { LangLevelReqd } from 'components/context/types'
 import { sortArrOfObjects } from 'components/legend/utils'
 import { useUItext } from 'components/generic'
+import { UI_SEARCH_ERROR_TEXT, UI_SEARCH_LOADING_TEXT } from 'components/config'
 import { OmniboxResult } from './OmniboxResult'
 import { ListboxComponent } from './ListboxComponent'
 import { renderGroup, prepAutocompleteGroups } from './utils'
@@ -98,8 +99,8 @@ export const SearchByOmnibox: FC = (props) => {
 
   let placeholder: string
   const problemo = error !== null || (!isLoading && !data.length)
-  const errorText = 'Could not get language data'
-  const loadingText = 'Loading language data...'
+  const errorText = UI_SEARCH_ERROR_TEXT
+  const loadingText = UI_SEARCH_LOADING_TEXT
 
   if (isLoading) placeholder = loadingText
   else if (problemo) placeholder = errorText
@@ -128,7 +129,8 @@ export const SearchByOmnibox: FC = (props) => {
       color="secondary"
       onChange={(event, value) => {
         // Can't just do <RouterLink>, otherwise keyboard selection no-go...
-        if (value) history.push(`/Explore/Language/${value.name}/${value.id}`)
+        if (value)
+          history.push(`/karte/Explore/Language/${value.name}/${value.id}`)
       }}
       filterOptions={(opts, { inputValue }) => {
         return matchSorter(opts, inputValue, {

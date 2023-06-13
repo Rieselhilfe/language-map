@@ -7,6 +7,13 @@ import { BiMapPin } from 'react-icons/bi'
 import { CustomCard, CardListWrap } from 'components/explore'
 import { Explanation, UItextFromAirtable } from 'components/generic'
 import { sortArrOfObjects } from 'components/legend/utils'
+import {
+  UI_ADDL_NEIGHBORHOODS,
+  UI_SITES,
+  UI_VIEW_DETAILS_LANGUAGE,
+  UI_VIEW_MORE_LANGUAGES_IN_1,
+  UI_VIEW_MORE_LANGUAGES_IN_2,
+} from 'components/config'
 import { DetailedIntroProps } from './types'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -43,9 +50,9 @@ const CardFooter: FC<{ text?: string }> = ({ text }) => {
   return (
     <Switch>
       <Route path="/Explore/Language/:language/:id" exact>
-        View more languages spoken in {text}
+        {UI_VIEW_MORE_LANGUAGES_IN_1} {text} {UI_VIEW_MORE_LANGUAGES_IN_2}
       </Route>
-      <Route>View details and show in map</Route>
+      <Route>{UI_VIEW_DETAILS_LANGUAGE}</Route>
     </Switch>
   )
 }
@@ -76,11 +83,11 @@ export const NeighborhoodList: FC<DetailedIntroProps> = (props) => {
         component="h4"
         className={classes.sectionHeading}
       >
-        Additional neighborhoods (NYC only)
+        {UI_ADDL_NEIGHBORHOODS}
       </Typography>
       <ul className={classes.addlNeighbsList}>
         <Switch>
-          <Route path="/Explore/Language/:language/:id" exact>
+          <Route path="/karte/Explore/Language/:language/:id" exact>
             {(data['Additional Neighborhoods'] || []).map((place) => (
               <li key={place}>
                 <Link
@@ -97,7 +104,7 @@ export const NeighborhoodList: FC<DetailedIntroProps> = (props) => {
               <li key={place}>
                 <Link
                   component={RouterLink}
-                  to={`/Explore/Neighborhood/${place}`}
+                  to={`/karte/Explore/Neighborhood/${place}`}
                 >
                   {place}
                 </Link>
@@ -124,11 +131,11 @@ export const NeighborhoodList: FC<DetailedIntroProps> = (props) => {
         component="h3"
         className={`${classes.verticalAlign} ${classes.mainHeading}`}
       >
-        <BiMapPin /> Sites
+        <BiMapPin /> {UI_SITES}
       </Typography>
       <Explanation>
         <Switch>
-          <Route path="/Explore/Language/:language/:id" exact>
+          <Route path="/karte/Explore/Language/:language/:id" exact>
             <UItextFromAirtable id="details-neighb-loc-list" rootElemType="p" />
           </Route>
           <Route>
@@ -139,7 +146,7 @@ export const NeighborhoodList: FC<DetailedIntroProps> = (props) => {
       <CardListWrap>
         <Switch>
           {/* Inside the Details "Locations" popout */}
-          <Route path="/Explore/Language/:language/:id" exact>
+          <Route path="/karte/Explore/Language/:language/:id" exact>
             <CustomCard
               title={locName}
               // intro={`${data.County[0]}`} // TODO: County as intro
@@ -154,7 +161,7 @@ export const NeighborhoodList: FC<DetailedIntroProps> = (props) => {
                   key={loc}
                   title={loc}
                   intro={county}
-                  url={`/Explore/Language/${name}/${id}`}
+                  url={`/karte/Explore/Language/${name}/${id}`}
                   footer={<CardFooter text={loc} />}
                   timeout={350 + i * 250}
                 />

@@ -9,6 +9,10 @@ import {
 } from '@material-ui/core'
 
 import { MarkdownWithRouteLinks, useUItext, Logo } from 'components/generic'
+import {
+  UI_AN_ERROR_HAS_OCCURRED,
+  UI_AN_URBAN_LANGUAGE_MAP,
+} from 'components/config'
 import { WelcomeFooter } from './WelcomeFooter'
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -74,7 +78,7 @@ const WelcomeDialogTitle: FC = () => {
       <div className={logoInner}>
         <Logo darkTheme />
         <Typography variant="caption" className={subSubTitle}>
-          An urban language map
+          {UI_AN_URBAN_LANGUAGE_MAP}
         </Typography>
       </div>
     </Typography>
@@ -96,7 +100,7 @@ export const WelcomeDialog: FC = () => {
   if (error) {
     Content = (
       <>
-        An error has occurred.{' '}
+        {UI_AN_ERROR_HAS_OCCURRED}{' '}
         <span role="img" aria-label="man shrugging emoji">
           🤷‍♂
         </span>

@@ -5,6 +5,13 @@ import { MdYoutubeSearchedFor } from 'react-icons/md'
 import { FiLayers } from 'react-icons/fi'
 import { FaSearchPlus, FaSearchMinus } from 'react-icons/fa'
 
+import {
+  UI_RESET_ZOOM,
+  UI_SHOW_MAP_OPTIONS,
+  UI_TOGGLE_2D,
+  UI_ZOOM_IN,
+  UI_ZOOM_OUT,
+} from 'components/config'
 import { MapCtrlBtnsProps, CtrlBtnConfig } from './types'
 import { MapOptionsMenu } from './MapOptionsMenu'
 
@@ -42,22 +49,22 @@ const ctrlBtnsConfig = [
   {
     id: 'in',
     icon: <FaSearchPlus />,
-    name: 'Zoom in',
+    name: UI_ZOOM_IN,
   },
   {
     id: 'out',
     icon: <FaSearchMinus />,
-    name: 'Zoom out',
+    name: UI_ZOOM_OUT,
   },
   {
     id: 'home',
     icon: <MdYoutubeSearchedFor style={{ fontSize: '1.75em' }} />,
-    name: 'Reset zoom',
+    name: UI_RESET_ZOOM,
   },
   {
     id: 'reset-pitch',
     icon: <b>3D</b>,
-    name: 'Toggle 2D/3D',
+    name: UI_TOGGLE_2D,
   },
 ] as CtrlBtnConfig[]
 
@@ -99,7 +106,7 @@ export const MapCtrlBtns: FC<MapCtrlBtnsProps> = (props) => {
         <SpeedDialAction
           className={classes.speedDialAction}
           icon={<FiLayers />}
-          tooltipTitle="Show map options"
+          tooltipTitle={UI_SHOW_MAP_OPTIONS}
           FabProps={{ size: 'small' }}
           onClick={handleClick}
         />

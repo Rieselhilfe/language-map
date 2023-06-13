@@ -64,8 +64,8 @@ export const prepFields = (
   field: RouteableTableNames // gross extra step for Airtable FIND issue
 ): string[] => {
   const arrayFields: RouteableTableNames[] = [
-    'Country',
-    'Macrocommunity',
+    // 'Country',
+    // 'Macrocommunity',
     'Neighborhood',
   ]
 

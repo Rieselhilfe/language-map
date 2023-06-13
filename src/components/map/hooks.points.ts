@@ -65,7 +65,7 @@ const createLayerStyles = (
   })
 export const useSelLangPointCoords = (): Types.UseSelLangPointCoordsReturn => {
   const match = useRouteMatch<{ id: string }>({
-    path: '/Explore/Language/:language/:id',
+    path: '/karte/Explore/Language/:language/:id',
     exact: true,
   })
 

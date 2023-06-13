@@ -3,6 +3,7 @@ import { Switch } from '@material-ui/core'
 
 import { CustomFormControl } from 'components/legend'
 import { useMapToolsDispatch, useMapToolsState } from 'components/context'
+import { UI_AUTO_ZOOM } from 'components/config'
 
 // Decides whether to auto-zoom to initial extent on Census language change
 export const CensusAutoZoomToggle: FC = (props) => {
@@ -15,7 +16,7 @@ export const CensusAutoZoomToggle: FC = (props) => {
 
   return (
     <CustomFormControl
-      label="Auto-zoom to initial extent"
+      label={UI_AUTO_ZOOM}
       switchControl={
         <Switch
           checked={autoZoomCensus}

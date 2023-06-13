@@ -1,6 +1,7 @@
 import React, { FC } from 'react'
 import { makeStyles, createStyles, Theme } from '@material-ui/core/styles'
 import { Backdrop, CircularProgress, Typography } from '@material-ui/core'
+import { UI_LOADING } from 'components/config'
 
 type LoadingBackdrop = {
   centerOnScreen?: boolean
@@ -39,7 +40,7 @@ export const LoadingBackdropEmpty: FC<{ open: boolean }> = (props) => {
 }
 
 export const LoadingBackdrop: FC<LoadingBackdrop> = (props) => {
-  const { text = 'Loading...', testID } = props
+  const { text = UI_LOADING, testID } = props
   const classes = useStyles()
 
   return (
