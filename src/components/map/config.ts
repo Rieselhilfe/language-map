@@ -14,9 +14,9 @@ export const mbStyleTileConfig = {
   tilesetId: 'langmapberlin.cldbohp940q9m20pqsjosubyw-2stso',
   // Custom MB Style: the only known way to use the custom fonts
   customStyles: {
-    dark: 'mapbox://styles/elalliance/ckdqj968x01ot19lf5yg472f2',
-    light: 'mapbox://styles/elalliance/ckdovh9us01wz1ipa5fjihv7l',
-    none: 'mapbox://styles/elalliance/cki50pk2s00ux19phcg6k2tjc',
+    dark: 'mapbox://styles/langmapberlin/clmruj7qs02au01qx7x2g80p3',
+    light: 'mapbox://styles/langmapberlin/clmruj7qs02au01qx7x2g80p3',
+    none: 'mapbox://styles/langmapberlin/clmruj7qs02au01qx7x2g80p3',
   } as { [key in BaseLayer]: string },
 }
 

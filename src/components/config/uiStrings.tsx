@@ -117,7 +117,7 @@ export const UI_LEGEND = 'Legende'
 // Click any world region above to see languages from that region which are
 // spoken locally.
 export const UI_CLICK_ANY_WORLD_REGION =
-  'Klicke auf eine der Weltregionen oben um die Gemeinschaften von aus dieser Region in Berlin zu sehen.'
+  'Klicke auf eine der Weltregionen oben, um Berliner Sprachgemeinschaften aus dieser Region zu sehen.'
 
 export const UI_HIDE = 'ausblenden'
 export const UI_SHOW = 'anzeigen'

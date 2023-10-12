@@ -13,23 +13,25 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 )
 
-// const DOCS_FORM_SRC =
-// 'https://docs.google.com/forms/d/e/1FAIpQLSe5VQ3rLOXett6xN_lUUqm5X88rb5NgWeF6bbObRX9Sconc2w/viewform?embedded=true'
+const DOCS_FORM_SRC =
+  'https://docs.google.com/forms/d/e/1FAIpQLSfyysD4C02HBVzU3MsJuFRhBSB4ituGYj7304-qcANmw0f6IA/viewform?embedded=true'
 
 export const FeedbackForm: FC = (props) => {
   const classes = useStyles()
 
-  return <div className={classes.root}>Kommt bald!</div>
+  return (
+    <div className={classes.root}>
+      <iframe
+        src={DOCS_FORM_SRC}
+        width="100%"
+        height="100%"
+        frameBorder="0"
+        marginHeight={0}
+        marginWidth={0}
+        title="Feedback and questions"
+      >
+        Loading…
+      </iframe>
+    </div>
+  )
 }
-
-// <iframe
-//        src={DOCS_FORM_SRC}
-//        width="100%"
-//        height="100%"
-//        frameBorder="0"
-//        marginHeight={0}
-//        marginWidth={0}
-//        title="Feedback and questions"
-//      >
-//        Loading…
-//      </iframe>
