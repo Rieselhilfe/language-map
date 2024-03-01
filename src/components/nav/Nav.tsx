@@ -15,7 +15,6 @@ import {
   icons,
   UI_ABOUT,
   UI_CONTACT_FEEDBACK,
-  UI_HELP,
   UI_USER_MANUAL,
 } from 'components/config'
 import { UItextFromAirtable } from 'components/generic'
@@ -95,21 +94,6 @@ export const Nav: FC = () => {
           <ListItem button dense disableGutters>
             <Link
               underline="none"
-              component={RouterLink}
-              to={routes.help}
-              className={listLink}
-            >
-              <ListItemIcon className={listItemIcon}>{icons.Help}</ListItemIcon>
-              <ListItemText
-                classes={{ secondary: smallerText }}
-                primary={UI_HELP}
-                secondary={<UItextFromAirtable id="info-link--help" />}
-              />
-            </Link>
-          </ListItem>
-          <ListItem button dense disableGutters>
-            <Link
-              underline="none"
               href="https://languagemapping.org/wp-content/uploads/2021/03/Help-Video-Script.pdf"
               target="_blank"
               className={listLink}
@@ -131,3 +115,21 @@ export const Nav: FC = () => {
     </>
   )
 }
+
+/**
+<ListItem button dense disableGutters>
+            <Link
+              underline="none"
+              component={RouterLink}
+              to={routes.help}
+              className={listLink}
+            >
+              <ListItemIcon className={listItemIcon}>{icons.Help}</ListItemIcon>
+              <ListItemText
+                classes={{ secondary: smallerText }}
+                primary={UI_HELP}
+                secondary={<UItextFromAirtable id="info-link--help" />}
+              />
+            </Link>
+          </ListItem>
+ */

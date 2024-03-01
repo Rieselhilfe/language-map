@@ -1,5 +1,6 @@
 import React, { FC } from 'react'
 import { makeStyles, Theme, createStyles } from '@material-ui/core/styles'
+import { UI_FEEDBACK_AND_QUESTIONS } from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -28,7 +29,7 @@ export const FeedbackForm: FC = (props) => {
         frameBorder="0"
         marginHeight={0}
         marginWidth={0}
-        title="Feedback and questions"
+        title={UI_FEEDBACK_AND_QUESTIONS}
       >
         Loading…
       </iframe>

@@ -4,7 +4,7 @@ import { Button } from '@material-ui/core'
 
 import { FeedbackModal } from 'components/about'
 import { Explanation, UItextFromAirtable } from 'components/generic'
-import { icons } from 'components/config'
+import { UI_PROVIDE_FEEDBACK, icons } from 'components/config'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -38,7 +38,7 @@ export const FeedbackToggle: FC<{ language?: string }> = (props) => {
           size="small"
           startIcon={icons.Feedback}
         >
-          Provide feedback
+          {UI_PROVIDE_FEEDBACK}
         </Button>
       </div>
       <FeedbackModal open={feedbackModalOpen} setOpen={setFeedbackModalOpen} />

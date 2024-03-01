@@ -197,7 +197,7 @@ export const UI_ABOUT = 'Über uns'
 // Contact & Feedback
 export const UI_CONTACT_FEEDBACK = 'Kontakt & Feedback'
 // Help
-export const UI_HELP = 'Hilfe'
+// export const UI_HELP = 'Hilfe'
 // User Manual
 export const UI_USER_MANUAL = 'Bedienungsanleitung'
 
@@ -275,3 +275,7 @@ export const UI_VIEW_FULL_SCREEN_DETAILS = 'Details im Vollbild ansehen'
 export const UI_SHOW_IN_MAP = 'Auf der Karte anschauen'
 // Click here to reset
 export const UI_CLICK_HERE_TO_RESET = 'Hier klicken zum zurücksetzen'
+// Provide Feedback
+export const UI_PROVIDE_FEEDBACK = 'Feedback geben'
+// Feedback and questions
+export const UI_FEEDBACK_AND_QUESTIONS = 'Feedback und Fragen'

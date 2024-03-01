@@ -14,6 +14,7 @@ import {
   UI_AN_URBAN_LANGUAGE_MAP,
 } from 'components/config'
 import { WelcomeFooter } from './WelcomeFooter'
+import { FeedbackToggle } from './FeedbackToggle'
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -128,6 +129,7 @@ export const WelcomeDialog: FC = () => {
       </DialogTitle>
       <DialogContent dividers className={dialogContent}>
         {Content}
+        <FeedbackToggle />
       </DialogContent>
       <WelcomeFooter handleClose={handleClose} />
     </Dialog>
